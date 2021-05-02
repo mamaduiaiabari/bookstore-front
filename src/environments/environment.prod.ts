@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'https://meubookstore-api.herokuapp.com/'
+  //baseUrl: 'http://localhost:9090/'
 };
