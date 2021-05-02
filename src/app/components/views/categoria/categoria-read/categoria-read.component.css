@@ -5,7 +5,7 @@
 
 .title{
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: .5rem;
 }
 
 .title h1{
@@ -16,4 +16,23 @@
 
 .table{
   width: 100%;
+  margin-top: .8rem;
+}
+
+.livros{
+  color: rgb(37, 125, 240);
+  margin-left: .6rem;
+}
+
+.edit{
+  color: rgb(206, 173, 24);
+}
+
+.delete{
+  color: rgb(228, 56, 56);
+  margin-left: .5rem;
+}
+
+.mat-header{
+  width: 5rem;
 }
