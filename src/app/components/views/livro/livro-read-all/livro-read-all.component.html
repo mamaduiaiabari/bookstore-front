@@ -1,10 +1,10 @@
 <div class="content">
-  <div class="title"> <h1> Categorias </h1> </div>
+  <div class="title"> <h1> Livros </h1> </div>
 
-  <button (click)="navegarParaCategoriaCreate()" class="mat-elevation-z8" mat-stroked-button color="primary">NOVA CATEGORIA</button>
+  <button class="mat-elevation-z8" mat-stroked-button color="primary">NOVO LIVRO</button>
 
   <div class="mat-elevation-z8 content-table">
-    <table class="table" mat-table [dataSource]="categorias">
+    <table class="table" mat-table [dataSource]="livros">
 
       <!-- Position Column -->
       <ng-container matColumnDef="id">
@@ -13,22 +13,16 @@
       </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="nome">
-        <th mat-header-cell *matHeaderCellDef> NOME </th>
-        <td mat-cell *matCellDef="let row"> {{ row.nome }} </td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="descricao">
-        <th mat-header-cell *matHeaderCellDef> DESCRIÇÃO </th>
-        <td mat-cell *matCellDef="let row"> {{ row.descricao }} </td>
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef> TITULO </th>
+        <td mat-cell *matCellDef="let row"> {{ row.titulo }} </td>
       </ng-container>
 
       <!-- Weight Column -->
       <ng-container matColumnDef="livros">
-        <th mat-header-cell *matHeaderCellDef> LIVROS </th>
+        <th mat-header-cell *matHeaderCellDef> LER LIVROS </th>
         <td mat-cell *matCellDef="let row">
-          <a class="livros" routerLink="{{ row.id }}/livros">
+          <a class="livros" >
             <i class="material-icons">book</i>
           </a>
         </td>
@@ -38,10 +32,10 @@
       <ng-container matColumnDef="acoes">
         <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
         <td mat-cell *matCellDef="let row">
-          <a class="edit" routerLink="update/{{ row.id }}">
+          <a class="edit" href="#">
             <i class="material-icons">edit</i>
           </a>
-          <a class="delete" routerLink="delete/{{ row.id }}">
+          <a class="delete" href="#">
             <i class="material-icons">delete</i>
           </a>
         </td>
@@ -50,6 +44,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-
+     <div *ngIf="livros.length<1" class="nehumLivro">ESTA CATEGORIA NÃO CONTÉM NENHUM LIVRO ASSOCIADO</div>
   </div>
 </div>
+
